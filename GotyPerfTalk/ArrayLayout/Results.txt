@@ -1,0 +1,39 @@
+﻿// * Summary *
+
+BenchmarkDotNet=v0.11.3, OS=Windows 10.0.17134.471 (1803/April2018Update/Redstone4)
+Intel Core i7-6700K CPU 4.00GHz (Skylake), 1 CPU, 8 logical and 4 physical cores
+Frequency=3914060 Hz, Resolution=255.4892 ns, Timer=TSC
+.NET Core SDK=2.2.200-preview-009648
+  [Host]     : .NET Core 2.2.0 (CoreCLR 4.6.27110.04, CoreFX 4.6.27110.04), 64bit RyuJIT
+  DefaultJob : .NET Core 2.2.0 (CoreCLR 4.6.27110.04, CoreFX 4.6.27110.04), 64bit RyuJIT
+
+
+   Method |  size |         Mean |        Error |       StdDev | Ratio |
+--------- |------ |-------------:|-------------:|-------------:|------:|
+ ColFirst |  1000 |   1,372.9 us |     6.101 us |     5.408 us |  1.00 |
+ RowFirst |  1000 |     842.3 us |     1.219 us |     1.018 us |  0.61 |
+   Vector |  1000 |     531.8 us |     1.515 us |     1.417 us |  0.39 |
+          |       |              |              |              |       |
+ ColFirst | 10000 | 564,419.3 us | 2,448.447 us | 2,290.279 us |  1.00 |
+ RowFirst | 10000 |  85,076.8 us |   654.321 us |   580.039 us |  0.15 |
+   Vector | 10000 |  54,884.3 us |    58.546 us |    51.900 us |  0.10 |
+
+// * Summary *
+
+BenchmarkDotNet=v0.11.3, OS=Windows 10.0.17134.471 (1803/April2018Update/Redstone4)
+Intel Core i7-6700K CPU 4.00GHz (Skylake), 1 CPU, 8 logical and 4 physical cores
+Frequency=3914060 Hz, Resolution=255.4892 ns, Timer=TSC
+.NET Core SDK=2.2.200-preview-009648
+  [Host]     : .NET Core 2.2.0 (CoreCLR 4.6.27110.04, CoreFX 4.6.27110.04), 64bit RyuJIT
+  DefaultJob : .NET Core 2.2.0 (CoreCLR 4.6.27110.04, CoreFX 4.6.27110.04), 64bit RyuJIT
+
+
+   Method |  size |         Mean |        Error |       StdDev | Ratio |
+--------- |------ |-------------:|-------------:|-------------:|------:|
+ ColFirst |  1000 |   1,329.6 us |    13.612 us |    11.367 us |  1.00 |
+ RowFirst |  1000 |     843.3 us |     2.594 us |     2.427 us |  0.63 |
+   Vector |  1000 |     535.0 us |     1.829 us |     1.622 us |  0.40 |
+          |       |              |              |              |       |
+ ColFirst | 10000 | 564,976.4 us | 1,773.090 us | 1,658.550 us |  1.00 |
+ RowFirst | 10000 |  84,927.2 us |    64.227 us |    53.632 us |  0.15 |
+   Vector | 10000 |  54,983.1 us |   343.863 us |   321.650 us |  0.10 |

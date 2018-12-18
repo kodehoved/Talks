@@ -1,0 +1,110 @@
+﻿==== ColFirst ====
+Normal JIT generated code
+ArrayLayout.Test.ColFirst()
+Begin 00007ff9cca117a0, size 67
+00007ff9`cca117a0 57              push    rdi
+00007ff9`cca117a1 56              push    rsi
+00007ff9`cca117a2 4883ec28        sub     rsp,28h
+00007ff9`cca117a6 33c0            xor     eax,eax
+00007ff9`cca117a8 33d2            xor     edx,edx
+00007ff9`cca117aa 448b4118        mov     r8d,dword ptr [rcx+18h]
+00007ff9`cca117ae 4585c0          test    r8d,r8d
+00007ff9`cca117b1 7e47            jle     00007ff9`cca117fa
+00007ff9`cca117b3 4533c9          xor     r9d,r9d
+00007ff9`cca117b6 4585c0          test    r8d,r8d
+00007ff9`cca117b9 7e38            jle     00007ff9`cca117f3
+00007ff9`cca117bb 4c8b5108        mov     r10,qword ptr [rcx+8]
+00007ff9`cca117bf 458bd9          mov     r11d,r9d
+00007ff9`cca117c2 452b5a18        sub     r11d,dword ptr [r10+18h]
+00007ff9`cca117c6 453b5a10        cmp     r11d,dword ptr [r10+10h]
+00007ff9`cca117ca 7335            jae     00007ff9`cca11801
+00007ff9`cca117cc 8bf2            mov     esi,edx
+00007ff9`cca117ce 412b721c        sub     esi,dword ptr [r10+1Ch]
+00007ff9`cca117d2 413b7214        cmp     esi,dword ptr [r10+14h]
+00007ff9`cca117d6 7329            jae     00007ff9`cca11801
+00007ff9`cca117d8 418b7a14        mov     edi,dword ptr [r10+14h]
+00007ff9`cca117dc 490faffb        imul    rdi,r11
+00007ff9`cca117e0 4c8bde          mov     r11,rsi
+00007ff9`cca117e3 4c03df          add     r11,rdi
+00007ff9`cca117e6 4303449a20      add     eax,dword ptr [r10+r11*4+20h]
+00007ff9`cca117eb 41ffc1          inc     r9d
+00007ff9`cca117ee 453bc8          cmp     r9d,r8d
+00007ff9`cca117f1 7ccc            jl      00007ff9`cca117bf
+00007ff9`cca117f3 ffc2            inc     edx
+00007ff9`cca117f5 413bd0          cmp     edx,r8d
+00007ff9`cca117f8 7cb9            jl      00007ff9`cca117b3
+00007ff9`cca117fa 4883c428        add     rsp,28h
+00007ff9`cca117fe 5e              pop     rsi
+00007ff9`cca117ff 5f              pop     rdi
+00007ff9`cca11800 c3              ret
+00007ff9`cca11801 e80ad9c55f      call    coreclr!JIT_RngChkFail (00007ffa`2c66f110)
+00007ff9`cca11806 cc              int     3
+
+
+
+==== RowFirst ====
+Normal JIT generated code
+ArrayLayout.Test.RowFirst()
+Begin 00007ff9cca11820, size 68
+00007ff9`cca11820 57              push    rdi
+00007ff9`cca11821 56              push    rsi
+00007ff9`cca11822 4883ec28        sub     rsp,28h
+00007ff9`cca11826 33c0            xor     eax,eax
+00007ff9`cca11828 33d2            xor     edx,edx
+00007ff9`cca1182a 448b4118        mov     r8d,dword ptr [rcx+18h]
+00007ff9`cca1182e 4585c0          test    r8d,r8d
+00007ff9`cca11831 7e48            jle     00007ff9`cca1187b
+00007ff9`cca11833 4533c9          xor     r9d,r9d
+00007ff9`cca11836 4585c0          test    r8d,r8d
+00007ff9`cca11839 7e39            jle     00007ff9`cca11874
+00007ff9`cca1183b 4c8b5108        mov     r10,qword ptr [rcx+8]
+00007ff9`cca1183f 448bda          mov     r11d,edx
+00007ff9`cca11842 452b5a18        sub     r11d,dword ptr [r10+18h]
+00007ff9`cca11846 453b5a10        cmp     r11d,dword ptr [r10+10h]
+00007ff9`cca1184a 7336            jae     00007ff9`cca11882
+00007ff9`cca1184c 418bf1          mov     esi,r9d
+00007ff9`cca1184f 412b721c        sub     esi,dword ptr [r10+1Ch]
+00007ff9`cca11853 413b7214        cmp     esi,dword ptr [r10+14h]
+00007ff9`cca11857 7329            jae     00007ff9`cca11882
+00007ff9`cca11859 418b7a14        mov     edi,dword ptr [r10+14h]
+00007ff9`cca1185d 490faffb        imul    rdi,r11
+00007ff9`cca11861 4c8bde          mov     r11,rsi
+00007ff9`cca11864 4c03df          add     r11,rdi
+00007ff9`cca11867 4303449a20      add     eax,dword ptr [r10+r11*4+20h]
+00007ff9`cca1186c 41ffc1          inc     r9d
+00007ff9`cca1186f 453bc8          cmp     r9d,r8d
+00007ff9`cca11872 7ccb            jl      00007ff9`cca1183f
+00007ff9`cca11874 ffc2            inc     edx
+00007ff9`cca11876 413bd0          cmp     edx,r8d
+00007ff9`cca11879 7cb8            jl      00007ff9`cca11833
+00007ff9`cca1187b 4883c428        add     rsp,28h
+00007ff9`cca1187f 5e              pop     rsi
+00007ff9`cca11880 5f              pop     rdi
+00007ff9`cca11881 c3              ret
+00007ff9`cca11882 e889d8c55f      call    coreclr!JIT_RngChkFail (00007ffa`2c66f110)
+00007ff9`cca11887 cc              int     3
+
+
+
+===== Vector =====
+Normal JIT generated code
+ArrayLayout.Test.Vector()
+Begin 00007ff9cca118a0, size 35
+00007ff9`cca118a0 4883ec28        sub     rsp,28h
+00007ff9`cca118a4 33c0            xor     eax,eax
+00007ff9`cca118a6 33d2            xor     edx,edx
+00007ff9`cca118a8 488b4910        mov     rcx,qword ptr [rcx+10h]
+00007ff9`cca118ac 83790800        cmp     dword ptr [rcx+8],0
+00007ff9`cca118b0 7e18            jle     00007ff9`cca118ca
+00007ff9`cca118b2 4c8bc1          mov     r8,rcx
+00007ff9`cca118b5 413b5008        cmp     edx,dword ptr [r8+8]
+00007ff9`cca118b9 7314            jae     00007ff9`cca118cf
+00007ff9`cca118bb 4c63ca          movsxd  r9,edx
+00007ff9`cca118be 4303448810      add     eax,dword ptr [r8+r9*4+10h]
+00007ff9`cca118c3 ffc2            inc     edx
+00007ff9`cca118c5 395108          cmp     dword ptr [rcx+8],edx
+00007ff9`cca118c8 7fe8            jg      00007ff9`cca118b2
+00007ff9`cca118ca 4883c428        add     rsp,28h
+00007ff9`cca118ce c3              ret
+00007ff9`cca118cf e83cd8c55f      call    coreclr!JIT_RngChkFail (00007ffa`2c66f110)
+00007ff9`cca118d4 cc              int     3
