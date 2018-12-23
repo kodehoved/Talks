@@ -87,7 +87,7 @@ namespace DataDrivenDesign
         {
             float r = 0, g = 0, b = 0;
 
-            for (int i = 0; i < classes.Length; i++)
+            for (int i = 0; i < structs.Length; i++)
             {
                 if (structs[i].IsRed) r += structs[i].FloatValue;
                 if (structs[i].IsGreen) g += structs[i].FloatValue;
