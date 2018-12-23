@@ -55,7 +55,7 @@ namespace BranchPrediction
             {
                 var x = data[i];
                 var m = x >> (8 * sizeof(int) - 1);
-                output[i] = ((x ^ m) - m);
+                output[i] = (x ^ m) - m;
             }
 
             return data.Length;
