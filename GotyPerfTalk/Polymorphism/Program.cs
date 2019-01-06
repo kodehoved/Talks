@@ -4,7 +4,6 @@ using System;
 
 namespace Polymorphism
 {
-    [DisassemblyDiagnoser(printAsm: true, printIL: true)]
     public class Test
     {
         [Params(10_000, 1_000_000)]

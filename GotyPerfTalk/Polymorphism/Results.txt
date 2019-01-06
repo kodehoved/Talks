@@ -1,0 +1,17 @@
+﻿// * Summary *
+
+BenchmarkDotNet=v0.11.3, OS=Windows 10.0.17134.472 (1803/April2018Update/Redstone4)
+Intel Core i7-6700K CPU 4.00GHz (Skylake), 1 CPU, 8 logical and 4 physical cores
+Frequency=3914063 Hz, Resolution=255.4890 ns, Timer=TSC
+.NET Core SDK=2.2.200-preview-009648
+  [Host]     : .NET Core 2.2.0 (CoreCLR 4.6.27110.04, CoreFX 4.6.27110.04), 64bit RyuJIT
+  DefaultJob : .NET Core 2.2.0 (CoreCLR 4.6.27110.04, CoreFX 4.6.27110.04), 64bit RyuJIT
+
+
+          Method |    size |         Mean |      Error |     StdDev | Ratio |
+---------------- |-------- |-------------:|-----------:|-----------:|------:|
+ VirtualDispatch |   10000 |    100.78 us |  0.1749 us |  0.1636 us |  1.00 |
+       Dedicated |   10000 |     30.00 us |  0.0342 us |  0.0320 us |  0.30 |
+                 |         |              |            |            |       |
+ VirtualDispatch | 1000000 | 10,149.36 us | 38.4845 us | 35.9985 us |  1.00 |
+       Dedicated | 1000000 |  3,076.81 us | 11.9887 us | 10.6277 us |  0.30 |
