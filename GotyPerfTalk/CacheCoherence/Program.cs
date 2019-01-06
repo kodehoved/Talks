@@ -7,7 +7,7 @@ namespace CacheCoherence
 {
     public class Test
     {
-        [Params(1, 2, 3, 4)]
+        [Params(1, 2, 4, 8)]
         public int threads;
 
         private static readonly int size = 100_000_000;
