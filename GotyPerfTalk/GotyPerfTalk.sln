@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.28407.52
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArrayLayout", "ArrayLayout\ArrayLayout.csproj", "{CB901551-55CB-4973-A834-B9D7AA93DF44}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ArrayLayout", "ArrayLayout\ArrayLayout.csproj", "{CB901551-55CB-4973-A834-B9D7AA93DF44}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BranchPrediction", "BranchPrediction\BranchPrediction.csproj", "{75C7E467-7AAD-4B93-A5A5-FDEF891C2A39}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BranchPrediction", "BranchPrediction\BranchPrediction.csproj", "{75C7E467-7AAD-4B93-A5A5-FDEF891C2A39}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CacheCoherence", "CacheCoherence\CacheCoherence.csproj", "{F580DF31-172D-49F2-8761-22ACD71AA2BE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CacheCoherence", "CacheCoherence\CacheCoherence.csproj", "{F580DF31-172D-49F2-8761-22ACD71AA2BE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataDrivenDesign", "DataDrivenDesign\DataDrivenDesign.csproj", "{0D40CB44-850A-4DB5-BF51-98DB0093CF85}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataDrivenDesign", "DataDrivenDesign\DataDrivenDesign.csproj", "{0D40CB44-850A-4DB5-BF51-98DB0093CF85}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Polymorphism", "Polymorphism\Polymorphism.csproj", "{D0395050-13E3-4130-974F-A35ABA51DBAD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{0D40CB44-850A-4DB5-BF51-98DB0093CF85}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0D40CB44-850A-4DB5-BF51-98DB0093CF85}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0D40CB44-850A-4DB5-BF51-98DB0093CF85}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D0395050-13E3-4130-974F-A35ABA51DBAD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0395050-13E3-4130-974F-A35ABA51DBAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0395050-13E3-4130-974F-A35ABA51DBAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0395050-13E3-4130-974F-A35ABA51DBAD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
