@@ -13,6 +13,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataDrivenDesign", "DataDri
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Polymorphism", "Polymorphism\Polymorphism.csproj", "{D0395050-13E3-4130-974F-A35ABA51DBAD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Indirection", "Indirection\Indirection.csproj", "{494EEC28-CEB1-4558-ABEE-29B2ABED5428}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{D0395050-13E3-4130-974F-A35ABA51DBAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D0395050-13E3-4130-974F-A35ABA51DBAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D0395050-13E3-4130-974F-A35ABA51DBAD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{494EEC28-CEB1-4558-ABEE-29B2ABED5428}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{494EEC28-CEB1-4558-ABEE-29B2ABED5428}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{494EEC28-CEB1-4558-ABEE-29B2ABED5428}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{494EEC28-CEB1-4558-ABEE-29B2ABED5428}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

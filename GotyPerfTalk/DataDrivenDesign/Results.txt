@@ -1,27 +1,27 @@
 ﻿// * Summary *
 
-BenchmarkDotNet=v0.11.3, OS=Windows 10.0.17134.471 (1803/April2018Update/Redstone4)
+BenchmarkDotNet=v0.11.3, OS=Windows 10.0.17134.472 (1803/April2018Update/Redstone4)
 Intel Core i7-6700K CPU 4.00GHz (Skylake), 1 CPU, 8 logical and 4 physical cores
-Frequency=3914060 Hz, Resolution=255.4892 ns, Timer=TSC
+Frequency=3914063 Hz, Resolution=255.4890 ns, Timer=TSC
 .NET Core SDK=2.2.200-preview-009648
   [Host]     : .NET Core 2.2.0 (CoreCLR 4.6.27110.04, CoreFX 4.6.27110.04), 64bit RyuJIT
   DefaultJob : .NET Core 2.2.0 (CoreCLR 4.6.27110.04, CoreFX 4.6.27110.04), 64bit RyuJIT
 
 
-          Method |     size |          Mean |         Error |        StdDev | Ratio | RatioSD |
----------------- |--------- |--------------:|--------------:|--------------:|------:|--------:|
-      UseClasses |    10000 |      97.98 us |     0.3961 us |     0.3705 us |  1.00 |    0.00 |
-      UseStructs |    10000 |      96.00 us |     0.4579 us |     0.4283 us |  0.98 |    0.01 |
- DedicatedArrays |    10000 |      15.09 us |     0.0815 us |     0.0763 us |  0.15 |    0.00 |
-                 |          |               |               |               |       |         |
-      UseClasses |   100000 |   1,132.36 us |     2.0634 us |     1.8291 us |  1.00 |    0.00 |
-      UseStructs |   100000 |   1,118.10 us |     4.8161 us |     4.5050 us |  0.99 |    0.00 |
- DedicatedArrays |   100000 |     151.18 us |     0.7247 us |     0.6778 us |  0.13 |    0.00 |
-                 |          |               |               |               |       |         |
-      UseClasses |  1000000 |  12,098.52 us |    59.3109 us |    55.4794 us |  1.00 |    0.00 |
-      UseStructs |  1000000 |  11,576.98 us |    26.3563 us |    24.6537 us |  0.96 |    0.00 |
- DedicatedArrays |  1000000 |   1,516.74 us |     4.8057 us |     4.4952 us |  0.13 |    0.00 |
-                 |          |               |               |               |       |         |
-      UseClasses | 10000000 | 121,211.29 us |   385.8810 us |   360.9533 us |  1.00 |    0.00 |
-      UseStructs | 10000000 | 122,518.68 us | 2,366.3521 us | 2,630.1941 us |  1.01 |    0.02 |
- DedicatedArrays | 10000000 |  15,651.08 us |   125.0450 us |   116.9672 us |  0.13 |    0.00 |
+          Method |     size |          Mean |       Error |      StdDev | Ratio |
+---------------- |--------- |--------------:|------------:|------------:|------:|
+      UseClasses |    10000 |      98.42 us |   0.2935 us |   0.2602 us |  1.00 |
+      UseStructs |    10000 |      95.56 us |   0.4873 us |   0.4558 us |  0.97 |
+ DedicatedArrays |    10000 |      15.18 us |   0.0963 us |   0.0901 us |  0.15 |
+                 |          |               |             |             |       |
+      UseClasses |   100000 |   1,164.32 us |   8.8076 us |   7.8077 us |  1.00 |
+      UseStructs |   100000 |   1,132.43 us |   9.9614 us |   8.8305 us |  0.97 |
+ DedicatedArrays |   100000 |     151.28 us |   0.1133 us |   0.1060 us |  0.13 |
+                 |          |               |             |             |       |
+      UseClasses |  1000000 |  12,193.80 us |  45.7192 us |  38.1776 us |  1.00 |
+      UseStructs |  1000000 |  11,626.78 us |  54.0394 us |  47.9045 us |  0.95 |
+ DedicatedArrays |  1000000 |   1,524.13 us |   1.4767 us |   1.1529 us |  0.13 |
+                 |          |               |             |             |       |
+      UseClasses | 10000000 | 122,398.76 us | 782.2937 us | 731.7580 us |  1.00 |
+      UseStructs | 10000000 | 116,046.85 us | 488.5471 us | 433.0843 us |  0.95 |
+ DedicatedArrays | 10000000 |  15,297.69 us |  21.3112 us |  17.7958 us |  0.12 |

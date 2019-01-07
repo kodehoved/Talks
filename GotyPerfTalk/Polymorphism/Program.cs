@@ -9,9 +9,9 @@ namespace Polymorphism
         [Params(10_000, 1_000_000)]
         public int size;
 
-        public Base[] oo;
-        public Data[] first;
-        public Data[] second;
+        private Base[] oo;
+        private Data[] first;
+        private Data[] second;
 
         [GlobalSetup]
         public void GlobalSetup()

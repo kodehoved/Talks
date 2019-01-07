@@ -1,0 +1,37 @@
+﻿ReferenceType .NET Core 2.2.0 (CoreCLR 4.6.27110.04, CoreFX 4.6.27110.04), 64bit RyuJIT
+
+00007ffb`6a862d00 Indirection.Test.ReferenceType()
+00007ffb`6a862d04 33c0            xor     eax,eax
+00007ffb`6a862d06 33d2            xor     edx,edx
+00007ffb`6a862d08 488b4908        mov     rcx,qword ptr [rcx+8]
+00007ffb`6a862d0c 83790800        cmp     dword ptr [rcx+8],0
+00007ffb`6a862d10 7e1c            jle     00007ffb`6a862d2e
+00007ffb`6a862d12 4c8bc1          mov     r8,rcx
+00007ffb`6a862d15 413b5008        cmp     edx,dword ptr [r8+8]
+00007ffb`6a862d19 7318            jae     00007ffb`6a862d33
+00007ffb`6a862d1b 4c63ca          movsxd  r9,edx
+00007ffb`6a862d1e 4f8b44c810      mov     r8,qword ptr [r8+r9*8+10h]     <-- additional mov for dereference
+00007ffb`6a862d23 41034008        add     eax,dword ptr [r8+8]
+00007ffb`6a862d27 ffc2            inc     edx
+00007ffb`6a862d29 395108          cmp     dword ptr [rcx+8],edx
+00007ffb`6a862d2c 7fe4            jg      00007ffb`6a862d12
+00007ffb`6a862d2e 4883c428        add     rsp,28h
+
+
+ValueType .NET Core 2.2.0 (CoreCLR 4.6.27110.04, CoreFX 4.6.27110.04), 64bit RyuJIT
+
+00007ffb`6a862d00 Indirection.Test.ValueType()
+00007ffb`6a862d04 33c0            xor     eax,eax
+00007ffb`6a862d06 33d2            xor     edx,edx
+00007ffb`6a862d08 488b4910        mov     rcx,qword ptr [rcx+10h]
+00007ffb`6a862d0c 83790800        cmp     dword ptr [rcx+8],0
+00007ffb`6a862d10 7e18            jle     00007ffb`6a862d2a
+00007ffb`6a862d12 4c8bc1          mov     r8,rcx
+00007ffb`6a862d15 413b5008        cmp     edx,dword ptr [r8+8]
+00007ffb`6a862d19 7314            jae     00007ffb`6a862d2f
+00007ffb`6a862d1b 4c63ca          movsxd  r9,edx
+00007ffb`6a862d1e 4303448810      add     eax,dword ptr [r8+r9*4+10h]
+00007ffb`6a862d23 ffc2            inc     edx
+00007ffb`6a862d25 395108          cmp     dword ptr [rcx+8],edx
+00007ffb`6a862d28 7fe8            jg      00007ffb`6a862d12
+00007ffb`6a862d2a 4883c428        add     rsp,28h

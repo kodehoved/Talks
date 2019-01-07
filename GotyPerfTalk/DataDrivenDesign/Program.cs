@@ -5,6 +5,7 @@ using System.Linq;
 
 namespace DataDrivenDesign
 {
+    [DisassemblyDiagnoser(printAsm: true)]
     public class Test
     {
         [Params(10_000, 100_000, 1_000_000, 10_000_000)]
