@@ -1,10 +1,11 @@
 ﻿using BenchmarkDotNet.Attributes;
 using BenchmarkDotNet.Running;
 using System;
-using System.Linq;
+using System.Numerics;
 
 namespace BranchPrediction
 {
+    [DisassemblyDiagnoser(printAsm: true)]
     public class Test
     {
         [Params(1, 10, 50, 90, 99)]
@@ -85,5 +86,35 @@ namespace BranchPrediction
 
             return sorted.Length;
         }
+
+        [Benchmark]
+        public int SIMD()
+        {
+            var length = Vector<int>.Count;
+
+            for (var i = 0; i < data.Length; i += length)
+            {
+                var span = new Span<int>(data, i, length);
+                Vector.Abs(new Vector<int>(span)).CopyTo(output, i);
+            }
+
+            return data.Length;
+        }
+
+        [Benchmark]
+        public int SIMDSorted()
+        {
+            var length = Vector<int>.Count;
+
+            for (var i = 0; i < sorted.Length; i += length)
+            {
+                var span = new Span<int>(sorted, i, length);
+                Vector.Abs(new Vector<int>(span)).CopyTo(output, i);
+            }
+
+            return sorted.Length;
+        }
+
+
     }
 }
