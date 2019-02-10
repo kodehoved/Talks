@@ -1,6 +1,7 @@
 ﻿using BenchmarkDotNet.Attributes;
 using BenchmarkDotNet.Running;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace DataDrivenDesign
@@ -13,6 +14,7 @@ namespace DataDrivenDesign
 
         private SomeClass[] classes;
         private SomeStruct[] structs;
+        private List<SomeClass> idiomatic;
 
         private float[] reds;
         private float[] greens;
@@ -25,7 +27,7 @@ namespace DataDrivenDesign
 
             classes = new SomeClass[size];
             structs = new SomeStruct[size];
-
+            idiomatic = new List<SomeClass>(size);
 
             for (int i = 0; i < size; i++)
             {
@@ -35,7 +37,7 @@ namespace DataDrivenDesign
                 var blue = random.Next(2) == 1;
                 var floatvalue = (float)random.NextDouble();
 
-                classes[i] = new SomeClass
+                var c = new SomeClass
                 {
                     Name = "name",
                     Description = "description",
@@ -45,6 +47,9 @@ namespace DataDrivenDesign
                     IsBlue = blue,
                     FloatValue = floatvalue
                 };
+
+                classes[i] = c;
+                idiomatic.Add(c);
 
                 structs[i] = new SomeStruct
                 {
@@ -106,6 +111,32 @@ namespace DataDrivenDesign
             for (int i = 0; i < reds.Length; i++) r += reds[i];
             for (int i = 0; i < greens.Length; i++) g += greens[i];
             for (int i = 0; i < blues.Length; i++) b += blues[i];
+
+            return r + g + b;
+        }
+
+        [Benchmark]
+        public float IdiomaticLINQ()
+        {
+            // Obviously slow as it iterates the collection 3 times
+            float r = idiomatic.Where(x => x.IsRed).Sum(x => x.FloatValue);
+            float g = idiomatic.Where(x => x.IsGreen).Sum(x => x.FloatValue);
+            float b = idiomatic.Where(x => x.IsBlue).Sum(x => x.FloatValue);
+
+            return r + g + b;
+        }
+
+        [Benchmark]
+        public float IdiomaticForeach()
+        {
+            float r = 0, g = 0, b = 0;
+
+            foreach(var c in idiomatic)
+            {
+                if (c.IsRed) r += c.FloatValue;
+                if (c.IsGreen) g += c.FloatValue;
+                if (c.IsBlue) b += c.FloatValue;
+            }
 
             return r + g + b;
         }
