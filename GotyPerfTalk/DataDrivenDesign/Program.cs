@@ -116,7 +116,7 @@ namespace DataDrivenDesign
         }
 
         [Benchmark]
-        public float IdiomaticLINQSilly()
+        public float IdiomaticLINQ()
         {
             // Obviously slow as it iterates the collection 3 times
             float r = idiomatic.Where(x => x.IsRed).Sum(x => x.FloatValue);
@@ -124,12 +124,6 @@ namespace DataDrivenDesign
             float b = idiomatic.Where(x => x.IsBlue).Sum(x => x.FloatValue);
 
             return r + g + b;
-        }
-
-        [Benchmark]
-        public float IdiomaticLINQLessSilly()
-        {
-            return idiomatic.Where(x => x.IsRed || x.IsGreen || x.IsBlue).Sum(x => x.FloatValue);
         }
 
         [Benchmark]
