@@ -11,9 +11,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CacheCoherence", "CacheCohe
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataDrivenDesign", "DataDrivenDesign\DataDrivenDesign.csproj", "{0D40CB44-850A-4DB5-BF51-98DB0093CF85}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Polymorphism", "Polymorphism\Polymorphism.csproj", "{D0395050-13E3-4130-974F-A35ABA51DBAD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Polymorphism", "Polymorphism\Polymorphism.csproj", "{D0395050-13E3-4130-974F-A35ABA51DBAD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Indirection", "Indirection\Indirection.csproj", "{494EEC28-CEB1-4558-ABEE-29B2ABED5428}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Indirection", "Indirection\Indirection.csproj", "{494EEC28-CEB1-4558-ABEE-29B2ABED5428}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdiomaticVsSimple", "IdiomaticVsSimple\IdiomaticVsSimple.csproj", "{3DE0C67E-55D5-4F20-924B-7DF7856886A8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{494EEC28-CEB1-4558-ABEE-29B2ABED5428}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{494EEC28-CEB1-4558-ABEE-29B2ABED5428}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{494EEC28-CEB1-4558-ABEE-29B2ABED5428}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3DE0C67E-55D5-4F20-924B-7DF7856886A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3DE0C67E-55D5-4F20-924B-7DF7856886A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3DE0C67E-55D5-4F20-924B-7DF7856886A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3DE0C67E-55D5-4F20-924B-7DF7856886A8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,0 +1,15 @@
+﻿// * Summary *
+
+BenchmarkDotNet=v0.11.5, OS=Windows 10.0.17134.765 (1803/April2018Update/Redstone4)
+Intel Core i7-6700K CPU 4.00GHz (Skylake), 1 CPU, 8 logical and 4 physical cores
+Frequency=3914060 Hz, Resolution=255.4892 ns, Timer=TSC
+.NET Core SDK=2.2.400-preview-010195
+  [Host]     : .NET Core 2.2.5 (CoreCLR 4.6.27617.05, CoreFX 4.6.27618.01), 64bit RyuJIT
+  DefaultJob : .NET Core 2.2.5 (CoreCLR 4.6.27617.05, CoreFX 4.6.27618.01), 64bit RyuJIT
+
+
+|  Method |      Mean |     Error |    StdDev | Ratio |
+|-------- |----------:|----------:|----------:|------:|
+|    LINQ | 704.86 ms | 1.8823 ms | 1.6686 ms |  1.00 |
+| Foreach | 214.46 ms | 0.3892 ms | 0.3640 ms |  0.30 |
+|  Simple |  89.73 ms | 1.0821 ms | 1.0122 ms |  0.13 |
