@@ -8,28 +8,63 @@ Frequency=3914063 Hz, Resolution=255.4890 ns, Timer=TSC
   DefaultJob : .NET Core 2.2.0 (CoreCLR 4.6.27110.04, CoreFX 4.6.27110.04), 64bit RyuJIT
 
 
-       Method | threads |        Mean |      Error |     StdDev |      Median | Ratio | RatioSD |
-------------- |-------- |------------:|-----------:|-----------:|------------:|------:|--------:|
-   SimpleLoop |       1 |   552.85 ms |  1.4001 ms |  1.2411 ms |   553.00 ms |  1.00 |    0.00 |
-       Broken |       1 |   552.80 ms |  0.5516 ms |  0.4890 ms |   552.76 ms |  1.00 |    0.00 |
-      Locking |       1 | 1,666.42 ms |  6.3799 ms |  5.3275 ms | 1,667.85 ms |  3.01 |    0.01 |
-     LockFree |       1 |   679.69 ms |  1.7451 ms |  1.6323 ms |   678.92 ms |  1.23 |    0.00 |
- LocalStorage |       1 |   551.83 ms |  1.4665 ms |  1.3000 ms |   552.39 ms |  1.00 |    0.00 |
-              |         |             |            |            |             |       |         |
-   SimpleLoop |       2 |   552.39 ms |  0.5143 ms |  0.4559 ms |   552.43 ms |  1.00 |    0.00 |
-       Broken |       2 |   513.19 ms | 10.4233 ms | 29.5693 ms |   501.43 ms |  0.91 |    0.08 |
-      Locking |       2 | 2,032.98 ms | 30.9086 ms | 28.9119 ms | 2,041.03 ms |  3.68 |    0.05 |
-     LockFree |       2 |   530.14 ms |  7.8877 ms |  7.3781 ms |   528.88 ms |  0.96 |    0.01 |
- LocalStorage |       2 |   276.62 ms |  0.6611 ms |  0.6184 ms |   276.26 ms |  0.50 |    0.00 |
-              |         |             |            |            |             |       |         |
-   SimpleLoop |       4 |   552.34 ms |  1.5335 ms |  1.4345 ms |   552.75 ms |  1.00 |    0.00 |
-       Broken |       4 |   295.23 ms |  7.8460 ms | 23.1341 ms |   287.96 ms |  0.54 |    0.05 |
-      Locking |       4 | 2,616.77 ms | 21.2502 ms | 17.7449 ms | 2,617.73 ms |  4.74 |    0.04 |
-     LockFree |       4 |   530.69 ms |  6.0218 ms |  5.6328 ms |   532.02 ms |  0.96 |    0.01 |
- LocalStorage |       4 |   139.19 ms |  0.2762 ms |  0.2583 ms |   139.17 ms |  0.25 |    0.00 |
-              |         |             |            |            |             |       |         |
-   SimpleLoop |       8 |   550.91 ms |  2.9396 ms |  2.7497 ms |   552.14 ms |  1.00 |    0.00 |
-       Broken |       8 |   187.37 ms |  3.6707 ms |  3.9276 ms |   188.69 ms |  0.34 |    0.01 |
-      Locking |       8 | 3,099.03 ms | 52.3410 ms | 48.9598 ms | 3,115.78 ms |  5.63 |    0.09 |
-     LockFree |       8 |   434.48 ms |  2.7495 ms |  2.5719 ms |   434.00 ms |  0.79 |    0.01 |
- LocalStorage |       8 |    71.82 ms |  0.8036 ms |  0.7124 ms |    71.86 ms |  0.13 |    0.00 |
+       Method | threads |        Mean |      Error |     StdDev |      Median | Ratio |
+------------- |-------- |------------:|-----------:|-----------:|------------:|------:|
+   SimpleLoop |       1 |   552.85 ms |  1.4001 ms |  1.2411 ms |   553.00 ms |  1.00 |
+       Broken |       1 |   552.80 ms |  0.5516 ms |  0.4890 ms |   552.76 ms |  1.00 |
+      Locking |       1 | 1,666.42 ms |  6.3799 ms |  5.3275 ms | 1,667.85 ms |  3.01 |
+     LockFree |       1 |   679.69 ms |  1.7451 ms |  1.6323 ms |   678.92 ms |  1.23 |
+ LocalStorage |       1 |   551.83 ms |  1.4665 ms |  1.3000 ms |   552.39 ms |  1.00 |
+              |         |             |            |            |             |       |
+   SimpleLoop |       2 |   552.39 ms |  0.5143 ms |  0.4559 ms |   552.43 ms |  1.00 |
+       Broken |       2 |   513.19 ms | 10.4233 ms | 29.5693 ms |   501.43 ms |  0.91 |
+      Locking |       2 | 2,032.98 ms | 30.9086 ms | 28.9119 ms | 2,041.03 ms |  3.68 |
+     LockFree |       2 |   530.14 ms |  7.8877 ms |  7.3781 ms |   528.88 ms |  0.96 |
+ LocalStorage |       2 |   276.62 ms |  0.6611 ms |  0.6184 ms |   276.26 ms |  0.50 |
+              |         |             |            |            |             |       |
+   SimpleLoop |       4 |   552.34 ms |  1.5335 ms |  1.4345 ms |   552.75 ms |  1.00 |
+       Broken |       4 |   295.23 ms |  7.8460 ms | 23.1341 ms |   287.96 ms |  0.54 |
+      Locking |       4 | 2,616.77 ms | 21.2502 ms | 17.7449 ms | 2,617.73 ms |  4.74 |
+     LockFree |       4 |   530.69 ms |  6.0218 ms |  5.6328 ms |   532.02 ms |  0.96 |
+ LocalStorage |       4 |   139.19 ms |  0.2762 ms |  0.2583 ms |   139.17 ms |  0.25 |
+              |         |             |            |            |             |       |
+   SimpleLoop |       8 |   550.91 ms |  2.9396 ms |  2.7497 ms |   552.14 ms |  1.00 |
+       Broken |       8 |   187.37 ms |  3.6707 ms |  3.9276 ms |   188.69 ms |  0.34 |
+      Locking |       8 | 3,099.03 ms | 52.3410 ms | 48.9598 ms | 3,115.78 ms |  5.63 |
+     LockFree |       8 |   434.48 ms |  2.7495 ms |  2.5719 ms |   434.00 ms |  0.79 |
+ LocalStorage |       8 |    71.82 ms |  0.8036 ms |  0.7124 ms |    71.86 ms |  0.13 |
+
+ // * Summary *
+
+BenchmarkDotNet=v0.11.3, OS=Windows 10.0.18362
+Intel Core i7-6700K CPU 4.00GHz (Skylake), 1 CPU, 8 logical and 4 physical cores
+.NET Core SDK=3.0.100
+  [Host]     : .NET Core 3.0.0 (CoreCLR 4.700.19.46205, CoreFX 4.700.19.46214), 64bit RyuJIT
+  DefaultJob : .NET Core 3.0.0 (CoreCLR 4.700.19.46205, CoreFX 4.700.19.46214), 64bit RyuJIT
+
+
+       Method | threads |        Mean |      Error |     StdDev |      Median | Ratio |
+------------- |-------- |------------:|-----------:|-----------:|------------:|------:|
+   SimpleLoop |       1 |   553.59 ms |  1.4361 ms |  1.3434 ms |   552.88 ms |  1.00 |
+       Broken |       1 |   679.89 ms |  0.9424 ms |  0.8354 ms |   679.71 ms |  1.23 |
+      Locking |       1 | 1,707.04 ms | 12.9447 ms | 12.1084 ms | 1,706.71 ms |  3.08 |
+     LockFree |       1 |   679.88 ms |  0.8428 ms |  0.7884 ms |   679.81 ms |  1.23 |
+ LocalStorage |       1 |   554.86 ms |  1.9198 ms |  1.7958 ms |   554.74 ms |  1.00 |
+              |         |             |            |            |             |       |
+   SimpleLoop |       2 |   553.80 ms |  1.8285 ms |  1.7104 ms |   552.66 ms |  1.00 |
+       Broken |       2 |   353.19 ms |  3.3887 ms |  3.1698 ms |   352.16 ms |  0.64 |
+      Locking |       2 | 2,150.94 ms | 19.2186 ms | 17.0368 ms | 2,153.23 ms |  3.88 |
+     LockFree |       2 |   540.16 ms | 10.6492 ms | 10.9359 ms |   537.90 ms |  0.97 |
+ LocalStorage |       2 |   277.90 ms |  0.8442 ms |  0.7897 ms |   277.96 ms |  0.50 |
+              |         |             |            |            |             |       |
+   SimpleLoop |       4 |   562.03 ms |  5.5558 ms |  4.9251 ms |   561.79 ms |  1.00 |
+       Broken |       4 |   210.36 ms |  4.1679 ms | 10.9800 ms |   211.47 ms |  0.38 |
+      Locking |       4 | 2,397.66 ms | 47.2679 ms | 56.2690 ms | 2,432.40 ms |  4.26 |
+     LockFree |       4 |   468.42 ms |  9.5398 ms | 18.8306 ms |   469.22 ms |  0.82 |
+ LocalStorage |       4 |   141.22 ms |  1.3695 ms |  1.2810 ms |   141.70 ms |  0.25 |
+              |         |             |            |            |             |       |
+   SimpleLoop |       8 |   553.02 ms |  0.8249 ms |  0.7716 ms |   552.66 ms |  1.00 |
+       Broken |       8 |   132.71 ms |  2.6423 ms |  3.0429 ms |   131.04 ms |  0.24 |
+      Locking |       8 | 2,792.20 ms | 46.4145 ms | 43.4161 ms | 2,817.15 ms |  5.05 |
+     LockFree |       8 |   425.28 ms |  8.1304 ms |  7.6052 ms |   426.17 ms |  0.77 |
+ LocalStorage |       8 |    76.20 ms |  1.5421 ms |  3.8971 ms |    73.91 ms |  0.14 |

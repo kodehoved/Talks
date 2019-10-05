@@ -20,20 +20,19 @@ Frequency=3914060 Hz, Resolution=255.4892 ns, Timer=TSC
 
 // * Summary *
 
-BenchmarkDotNet=v0.11.3, OS=Windows 10.0.17134.471 (1803/April2018Update/Redstone4)
+BenchmarkDotNet=v0.11.3, OS=Windows 10.0.18362
 Intel Core i7-6700K CPU 4.00GHz (Skylake), 1 CPU, 8 logical and 4 physical cores
-Frequency=3914060 Hz, Resolution=255.4892 ns, Timer=TSC
-.NET Core SDK=2.2.200-preview-009648
-  [Host]     : .NET Core 2.2.0 (CoreCLR 4.6.27110.04, CoreFX 4.6.27110.04), 64bit RyuJIT
-  DefaultJob : .NET Core 2.2.0 (CoreCLR 4.6.27110.04, CoreFX 4.6.27110.04), 64bit RyuJIT
+.NET Core SDK=3.0.100
+  [Host]     : .NET Core 3.0.0 (CoreCLR 4.700.19.46205, CoreFX 4.700.19.46214), 64bit RyuJIT
+  DefaultJob : .NET Core 3.0.0 (CoreCLR 4.700.19.46205, CoreFX 4.700.19.46214), 64bit RyuJIT
 
 
    Method |  size |         Mean |        Error |       StdDev | Ratio |
 --------- |------ |-------------:|-------------:|-------------:|------:|
- ColFirst |  1000 |   1,329.6 us |    13.612 us |    11.367 us |  1.00 |
- RowFirst |  1000 |     843.3 us |     2.594 us |     2.427 us |  0.63 |
-   Vector |  1000 |     535.0 us |     1.829 us |     1.622 us |  0.40 |
+ ColFirst |  1000 |   1,507.3 us |    26.429 us |    22.070 us |  1.00 |
+ RowFirst |  1000 |     857.2 us |     6.704 us |     5.598 us |  0.57 |
+   Vector |  1000 |     563.1 us |     5.118 us |     4.788 us |  0.37 |
           |       |              |              |              |       |
- ColFirst | 10000 | 564,976.4 us | 1,773.090 us | 1,658.550 us |  1.00 |
- RowFirst | 10000 |  84,927.2 us |    64.227 us |    53.632 us |  0.15 |
-   Vector | 10000 |  54,983.1 us |   343.863 us |   321.650 us |  0.10 |
+ ColFirst | 10000 | 577,493.1 us | 5,977.249 us | 5,591.122 us |  1.00 |
+ RowFirst | 10000 |  86,899.8 us | 1,570.394 us | 1,468.948 us |  0.15 |
+   Vector | 10000 |  56,618.1 us |   518.317 us |   459.474 us |  0.10 |

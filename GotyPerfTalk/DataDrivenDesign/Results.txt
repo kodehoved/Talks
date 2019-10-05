@@ -8,28 +8,63 @@ Frequency=3914061 Hz, Resolution=255.4891 ns, Timer=TSC
   DefaultJob : .NET Core 2.2.0 (CoreCLR 4.6.27110.04, CoreFX 4.6.27110.04), 64bit RyuJIT
 
 
-           Method |     size |          Mean |       Error |      StdDev | Ratio | RatioSD |
------------------ |--------- |--------------:|------------:|------------:|------:|--------:|
-       UseClasses |    10000 |      99.81 us |   0.6313 us |   0.5905 us |  1.00 |    0.00 |
-       UseStructs |    10000 |      98.47 us |   0.6066 us |   0.5675 us |  0.99 |    0.01 |
-  DedicatedArrays |    10000 |      15.04 us |   0.0665 us |   0.0622 us |  0.15 |    0.00 |
-    IdiomaticLINQ |    10000 |     495.83 us |   3.3248 us |   3.1100 us |  4.97 |    0.04 |
- IdiomaticForeach |    10000 |     157.93 us |   1.0308 us |   0.9138 us |  1.58 |    0.02 |
-                  |          |               |             |             |       |         |
-       UseClasses |   100000 |   1,127.97 us |   8.3775 us |   7.8363 us |  1.00 |    0.00 |
-       UseStructs |   100000 |   1,108.82 us |   1.4362 us |   1.3434 us |  0.98 |    0.01 |
-  DedicatedArrays |   100000 |     150.45 us |   0.6793 us |   0.5672 us |  0.13 |    0.00 |
-    IdiomaticLINQ |   100000 |   4,951.10 us |  33.3436 us |  31.1896 us |  4.39 |    0.05 |
- IdiomaticForeach |   100000 |   1,617.83 us |  13.1502 us |  11.6573 us |  1.44 |    0.01 |
-                  |          |               |             |             |       |         |
-       UseClasses |  1000000 |  12,097.59 us | 101.1642 us |  94.6291 us |  1.00 |    0.00 |
-       UseStructs |  1000000 |  11,486.00 us |  12.0081 us |  11.2324 us |  0.95 |    0.01 |
-  DedicatedArrays |  1000000 |   1,508.13 us |   8.4516 us |   7.4921 us |  0.12 |    0.00 |
-    IdiomaticLINQ |  1000000 |  50,869.51 us | 202.6685 us | 189.5762 us |  4.21 |    0.04 |
- IdiomaticForeach |  1000000 |  16,990.52 us | 107.7357 us | 100.7761 us |  1.40 |    0.01 |
-                  |          |               |             |             |       |         |
-       UseClasses | 10000000 | 120,825.81 us | 798.3616 us | 746.7880 us |  1.00 |    0.00 |
-       UseStructs | 10000000 | 114,961.53 us |  94.8214 us |  74.0303 us |  0.95 |    0.01 |
-  DedicatedArrays | 10000000 |  15,097.98 us |  85.9602 us |  80.4072 us |  0.12 |    0.00 |
-    IdiomaticLINQ | 10000000 | 513,613.34 us | 654.2630 us | 611.9980 us |  4.25 |    0.02 |
- IdiomaticForeach | 10000000 | 170,015.50 us | 195.9826 us | 183.3223 us |  1.41 |    0.01 |
+           Method |     size |          Mean |       Error |      StdDev | Ratio |
+----------------- |--------- |--------------:|------------:|------------:|------:|
+       UseClasses |    10000 |      99.81 us |   0.6313 us |   0.5905 us |  1.00 |
+       UseStructs |    10000 |      98.47 us |   0.6066 us |   0.5675 us |  0.99 |
+  DedicatedArrays |    10000 |      15.04 us |   0.0665 us |   0.0622 us |  0.15 |
+    IdiomaticLINQ |    10000 |     495.83 us |   3.3248 us |   3.1100 us |  4.97 |
+ IdiomaticForeach |    10000 |     157.93 us |   1.0308 us |   0.9138 us |  1.58 |
+                  |          |               |             |             |       |
+       UseClasses |   100000 |   1,127.97 us |   8.3775 us |   7.8363 us |  1.00 |
+       UseStructs |   100000 |   1,108.82 us |   1.4362 us |   1.3434 us |  0.98 |
+  DedicatedArrays |   100000 |     150.45 us |   0.6793 us |   0.5672 us |  0.13 |
+    IdiomaticLINQ |   100000 |   4,951.10 us |  33.3436 us |  31.1896 us |  4.39 |
+ IdiomaticForeach |   100000 |   1,617.83 us |  13.1502 us |  11.6573 us |  1.44 |
+                  |          |               |             |             |       |
+       UseClasses |  1000000 |  12,097.59 us | 101.1642 us |  94.6291 us |  1.00 |
+       UseStructs |  1000000 |  11,486.00 us |  12.0081 us |  11.2324 us |  0.95 |
+  DedicatedArrays |  1000000 |   1,508.13 us |   8.4516 us |   7.4921 us |  0.12 |
+    IdiomaticLINQ |  1000000 |  50,869.51 us | 202.6685 us | 189.5762 us |  4.21 |
+ IdiomaticForeach |  1000000 |  16,990.52 us | 107.7357 us | 100.7761 us |  1.40 |
+                  |          |               |             |             |       |
+       UseClasses | 10000000 | 120,825.81 us | 798.3616 us | 746.7880 us |  1.00 |
+       UseStructs | 10000000 | 114,961.53 us |  94.8214 us |  74.0303 us |  0.95 |
+  DedicatedArrays | 10000000 |  15,097.98 us |  85.9602 us |  80.4072 us |  0.12 |
+    IdiomaticLINQ | 10000000 | 513,613.34 us | 654.2630 us | 611.9980 us |  4.25 |
+ IdiomaticForeach | 10000000 | 170,015.50 us | 195.9826 us | 183.3223 us |  1.41 |
+
+ // * Summary *
+
+BenchmarkDotNet=v0.11.3, OS=Windows 10.0.18362
+Intel Core i7-6700K CPU 4.00GHz (Skylake), 1 CPU, 8 logical and 4 physical cores
+.NET Core SDK=3.0.100
+  [Host]     : .NET Core 3.0.0 (CoreCLR 4.700.19.46205, CoreFX 4.700.19.46214), 64bit RyuJIT
+  DefaultJob : .NET Core 3.0.0 (CoreCLR 4.700.19.46205, CoreFX 4.700.19.46214), 64bit RyuJIT
+
+
+           Method |     size |          Mean |         Error |        StdDev | Ratio |
+----------------- |--------- |--------------:|--------------:|--------------:|------:|
+       UseClasses |    10000 |     104.80 us |     1.7539 us |     1.6406 us |  1.00 |
+       UseStructs |    10000 |      95.70 us |     1.8738 us |     1.7527 us |  0.91 |
+  DedicatedArrays |    10000 |      15.12 us |     0.0556 us |     0.0493 us |  0.14 |
+    IdiomaticLINQ |    10000 |     433.34 us |     6.3925 us |     5.9795 us |  4.14 |
+ IdiomaticForeach |    10000 |     163.74 us |     1.2919 us |     1.2085 us |  1.56 |
+                  |          |               |               |               |       |
+       UseClasses |   100000 |   1,157.90 us |     7.2944 us |     6.4663 us |  1.00 |
+       UseStructs |   100000 |   1,158.91 us |    16.5088 us |    15.4424 us |  1.00 |
+  DedicatedArrays |   100000 |     151.14 us |     0.0921 us |     0.0769 us |  0.13 |
+    IdiomaticLINQ |   100000 |   4,345.83 us |    83.5468 us |    85.7964 us |  3.76 |
+ IdiomaticForeach |   100000 |   1,721.17 us |    26.3354 us |    24.6342 us |  1.49 |
+                  |          |               |               |               |       |
+       UseClasses |  1000000 |  12,333.12 us |   130.4626 us |   122.0348 us |  1.00 |
+       UseStructs |  1000000 |  11,788.41 us |   152.0408 us |   142.2191 us |  0.96 |
+  DedicatedArrays |  1000000 |   1,535.99 us |     8.3660 us |     7.8256 us |  0.12 |
+    IdiomaticLINQ |  1000000 |  44,884.60 us |   585.4701 us |   547.6491 us |  3.64 |
+ IdiomaticForeach |  1000000 |  17,293.85 us |    44.8496 us |    41.9524 us |  1.40 |
+                  |          |               |               |               |       |
+       UseClasses | 10000000 | 123,022.87 us | 1,081.9920 us | 1,012.0960 us |  1.00 |
+       UseStructs | 10000000 | 116,904.18 us |   769.5232 us |   719.8125 us |  0.95 |
+  DedicatedArrays | 10000000 |  15,325.67 us |    52.5867 us |    49.1896 us |  0.12 |
+    IdiomaticLINQ | 10000000 | 449,817.65 us | 8,105.8411 us | 7,582.2088 us |  3.66 |
+ IdiomaticForeach | 10000000 | 174,243.08 us | 1,688.5743 us | 1,579.4935 us |  1.42 |

@@ -15,3 +15,20 @@ Frequency=3914063 Hz, Resolution=255.4890 ns, Timer=TSC
                  |         |              |            |            |       |
  VirtualDispatch | 1000000 | 10,149.36 us | 38.4845 us | 35.9985 us |  1.00 |
        Dedicated | 1000000 |  3,076.81 us | 11.9887 us | 10.6277 us |  0.30 |
+
+// * Summary *
+
+BenchmarkDotNet=v0.11.3, OS=Windows 10.0.18362
+Intel Core i7-6700K CPU 4.00GHz (Skylake), 1 CPU, 8 logical and 4 physical cores
+.NET Core SDK=3.0.100
+  [Host]     : .NET Core 3.0.0 (CoreCLR 4.700.19.46205, CoreFX 4.700.19.46214), 64bit RyuJIT
+  DefaultJob : .NET Core 3.0.0 (CoreCLR 4.700.19.46205, CoreFX 4.700.19.46214), 64bit RyuJIT
+
+
+          Method |    size |         Mean |      Error |     StdDev | Ratio |
+---------------- |-------- |-------------:|-----------:|-----------:|------:|
+ VirtualDispatch |   10000 |    100.93 us |  0.3038 us |  0.2841 us |  1.00 |
+       Dedicated |   10000 |     30.38 us |  0.1039 us |  0.0868 us |  0.30 |
+                 |         |              |            |            |       |
+ VirtualDispatch | 1000000 | 10,325.44 us | 51.7206 us | 48.3795 us |  1.00 |
+       Dedicated | 1000000 |  3,083.98 us | 12.4808 us | 11.6745 us |  0.30 |

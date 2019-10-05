@@ -13,3 +13,18 @@ Frequency=3914060 Hz, Resolution=255.4892 ns, Timer=TSC
 |    LINQ | 704.86 ms | 1.8823 ms | 1.6686 ms |  1.00 |
 | Foreach | 214.46 ms | 0.3892 ms | 0.3640 ms |  0.30 |
 |  Simple |  89.73 ms | 1.0821 ms | 1.0122 ms |  0.13 |
+
+// * Summary *
+
+BenchmarkDotNet=v0.11.5, OS=Windows 10.0.18362
+Intel Core i7-6700K CPU 4.00GHz (Skylake), 1 CPU, 8 logical and 4 physical cores
+.NET Core SDK=3.0.100
+  [Host]     : .NET Core 3.0.0 (CoreCLR 4.700.19.46205, CoreFX 4.700.19.46214), 64bit RyuJIT
+  DefaultJob : .NET Core 3.0.0 (CoreCLR 4.700.19.46205, CoreFX 4.700.19.46214), 64bit RyuJIT
+
+
+|  Method |      Mean |     Error |    StdDev | Ratio |
+|-------- |----------:|----------:|----------:|------:|
+|    LINQ | 760.17 ms | 11.709 ms | 10.952 ms |  1.00 |
+| Foreach | 206.66 ms |  1.583 ms |  1.403 ms |  0.27 |
+|  Simple |  93.49 ms |  1.188 ms |  1.111 ms |  0.12 |

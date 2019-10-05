@@ -44,3 +44,49 @@ Frequency=3914061 Hz, Resolution=255.4891 ns, Timer=TSC
  AbsNoBranchSorted |               99 |   764.0 us |  3.3732 us |  3.1553 us |  0.82 |
               SIMD |               99 |   464.5 us |  3.3111 us |  3.0972 us |  0.50 |
         SIMDSorted |               99 |   465.9 us |  1.8648 us |  1.7443 us |  0.50 |
+
+// * Summary *
+
+BenchmarkDotNet=v0.11.3, OS=Windows 10.0.18362
+Intel Core i7-6700K CPU 4.00GHz (Skylake), 1 CPU, 8 logical and 4 physical cores
+.NET Core SDK=3.0.100
+  [Host]     : .NET Core 3.0.0 (CoreCLR 4.700.19.46205, CoreFX 4.700.19.46214), 64bit RyuJIT
+  DefaultJob : .NET Core 3.0.0 (CoreCLR 4.700.19.46205, CoreFX 4.700.19.46214), 64bit RyuJIT
+
+
+            Method | percent_negative |       Mean |     Error |    StdDev |     Median | Ratio |
+------------------ |----------------- |-----------:|----------:|----------:|-----------:|------:|
+               Abs |                1 |   808.7 us | 16.171 us | 27.018 us |   796.6 us |  1.00 |
+       AbsNoBranch |                1 |   867.3 us | 23.725 us | 22.192 us |   855.8 us |  1.08 |
+         AbsSorted |                1 |   801.3 us | 18.993 us | 21.111 us |   791.1 us |  0.99 |
+ AbsNoBranchSorted |                1 |   804.3 us | 29.862 us | 30.666 us |   790.3 us |  1.00 |
+              SIMD |                1 |   289.9 us | 14.497 us | 20.791 us |   283.1 us |  0.36 | <--
+        SIMDSorted |                1 |   290.0 us |  5.647 us |  5.282 us |   289.3 us |  0.36 | <--
+                   |                  |            |           |           |            |       |
+               Abs |               10 | 1,713.1 us | 33.832 us | 31.646 us | 1,708.0 us |  1.00 |
+       AbsNoBranch |               10 |   866.1 us | 17.028 us | 23.871 us |   853.7 us |  0.51 |
+         AbsSorted |               10 |   833.5 us | 16.304 us | 29.399 us |   834.0 us |  0.47 |
+ AbsNoBranchSorted |               10 |   794.5 us |  6.094 us |  5.402 us |   793.8 us |  0.46 |
+              SIMD |               10 |   321.9 us | 14.169 us | 41.779 us |   304.9 us |  0.19 | <--
+        SIMDSorted |               10 |   330.3 us | 14.249 us | 42.012 us |   300.3 us |  0.21 | <--
+                   |                  |            |           |           |            |       |
+               Abs |               50 | 3,917.1 us |  4.122 us |  3.442 us | 3,916.5 us |  1.00 |
+       AbsNoBranch |               50 |   858.8 us | 19.363 us | 19.017 us |   850.8 us |  0.22 |
+         AbsSorted |               50 |   869.9 us |  4.721 us |  4.416 us |   868.8 us |  0.22 |
+ AbsNoBranchSorted |               50 |   877.5 us | 10.742 us | 10.048 us |   876.5 us |  0.22 |
+              SIMD |               50 |   279.7 us |  2.919 us |  2.731 us |   279.5 us |  0.07 | <--
+        SIMDSorted |               50 |   287.6 us |  4.227 us |  3.748 us |   286.9 us |  0.07 | <--
+                   |                  |            |           |           |            |       |
+               Abs |               90 | 1,722.5 us | 11.110 us |  9.848 us | 1,718.4 us |  1.00 |
+       AbsNoBranch |               90 |   854.3 us | 12.311 us | 11.516 us |   852.1 us |  0.50 |
+         AbsSorted |               90 |   811.1 us |  7.504 us |  6.652 us |   811.0 us |  0.47 |
+ AbsNoBranchSorted |               90 |   782.0 us |  3.485 us |  2.910 us |   782.5 us |  0.45 |
+              SIMD |               90 |   314.9 us | 15.020 us | 44.287 us |   284.0 us |  0.19 | <--
+        SIMDSorted |               90 |   287.8 us |  3.632 us |  3.033 us |   287.6 us |  0.17 | <--
+                   |                  |            |           |           |            |       |
+               Abs |               99 | 1,002.8 us | 18.582 us | 17.381 us | 1,005.5 us |  1.00 |
+       AbsNoBranch |               99 |   852.2 us | 10.156 us |  9.003 us |   851.4 us |  0.85 |
+         AbsSorted |               99 |   792.0 us |  9.868 us |  9.231 us |   792.6 us |  0.79 |
+ AbsNoBranchSorted |               99 |   829.3 us | 16.934 us | 33.818 us |   824.1 us |  0.85 |
+              SIMD |               99 |   326.6 us | 16.291 us | 48.035 us |   313.0 us |  0.31 | <--
+        SIMDSorted |               99 |   321.3 us | 14.880 us | 43.873 us |   292.5 us |  0.30 | <--
