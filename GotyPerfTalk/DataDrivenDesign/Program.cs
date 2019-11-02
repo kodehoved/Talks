@@ -45,7 +45,10 @@ namespace DataDrivenDesign
                     IsRed = red,
                     IsGreen = green,
                     IsBlue = blue,
-                    FloatValue = floatvalue
+                    FloatValue = floatvalue,
+                    Reference = null,
+                    YetAnotherFlag = false,
+                    RarelyUsedValue = 42,
                 };
 
                 classes[i] = c;
@@ -59,7 +62,10 @@ namespace DataDrivenDesign
                     IsRed = red,
                     IsGreen = green,
                     IsBlue = blue,
-                    FloatValue = floatvalue
+                    FloatValue = floatvalue,
+                    Reference = null,
+                    YetAnotherFlag = false,
+                    RarelyUsedValue = 42,
                 };
             }
 
@@ -131,7 +137,7 @@ namespace DataDrivenDesign
         {
             float r = 0, g = 0, b = 0;
 
-            foreach(var c in idiomatic)
+            foreach (var c in idiomatic)
             {
                 if (c.IsRed) r += c.FloatValue;
                 if (c.IsGreen) g += c.FloatValue;
@@ -151,6 +157,11 @@ namespace DataDrivenDesign
         public bool IsBlue { get; set; }
         public float FloatValue { get; set; }
         public byte SmallValue { get; set; }
+        public SomeClass Reference { get; set; }
+        public bool YetAnotherFlag { get; set; }
+        public double RarelyUsedValue { get; set; }
+
+        // A lot of useful things you can do with SomeClass
     }
 
     public struct SomeStruct
@@ -162,5 +173,8 @@ namespace DataDrivenDesign
         public bool IsBlue { get; set; }
         public float FloatValue { get; set; }
         public byte SmallValue { get; set; }
+        public SomeClass Reference { get; set; }
+        public bool YetAnotherFlag { get; set; }
+        public double RarelyUsedValue { get; set; }
     }
 }
