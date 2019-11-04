@@ -4,6 +4,7 @@ using System;
 
 namespace ArrayLayout
 {
+    [DisassemblyDiagnoser(printAsm: true)]
     public class Test
     {
         [Params(1_000, 10_000)]
