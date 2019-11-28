@@ -1,0 +1,16 @@
+﻿// * Summary *
+
+BenchmarkDotNet=v0.12.0, OS=Windows 10.0.18362
+Intel Core i7-6700K CPU 4.00GHz (Skylake), 1 CPU, 8 logical and 4 physical cores
+.NET Core SDK=3.0.100
+  [Host]     : .NET Core 3.0.0 (CoreCLR 4.700.19.46205, CoreFX 4.700.19.46214), X64 RyuJIT
+  DefaultJob : .NET Core 3.0.0 (CoreCLR 4.700.19.46205, CoreFX 4.700.19.46214), X64 RyuJIT
+
+
+|  Method |     size |          Mean |         Error |        StdDev |        Median | Ratio |
+|-------- |--------- |--------------:|--------------:|--------------:|--------------:|------:|
+| Ordered |    10000 |      6.997 us |     0.0496 us |     0.0464 us |      6.985 us |  1.00 |
+|  Random |    10000 |      6.951 us |     0.0290 us |     0.0257 us |      6.950 us |  0.99 |
+|         |          |               |               |               |               |       |
+| Ordered | 10000000 |  7,135.892 us |    29.1170 us |    27.2360 us |  7,141.206 us |  1.00 |
+|  Random | 10000000 | 53,534.813 us | 1,105.6701 us | 3,225.2917 us | 51,357.855 us |  7.63 |

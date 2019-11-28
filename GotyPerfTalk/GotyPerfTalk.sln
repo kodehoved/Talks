@@ -15,7 +15,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Polymorphism", "Polymorphis
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Indirection", "Indirection\Indirection.csproj", "{494EEC28-CEB1-4558-ABEE-29B2ABED5428}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdiomaticVsSimple", "IdiomaticVsSimple\IdiomaticVsSimple.csproj", "{3DE0C67E-55D5-4F20-924B-7DF7856886A8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IdiomaticVsSimple", "IdiomaticVsSimple\IdiomaticVsSimple.csproj", "{3DE0C67E-55D5-4F20-924B-7DF7856886A8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StructOfArrays", "StructOfArrays\StructOfArrays.csproj", "{2142F4B1-CE61-41F0-9113-C9B2E17274F0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AccessPatterns", "AccessPatterns\AccessPatterns.csproj", "{1380F2D4-795D-460D-8696-4450ED91D6BB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +55,14 @@ Global
 		{3DE0C67E-55D5-4F20-924B-7DF7856886A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3DE0C67E-55D5-4F20-924B-7DF7856886A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3DE0C67E-55D5-4F20-924B-7DF7856886A8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2142F4B1-CE61-41F0-9113-C9B2E17274F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2142F4B1-CE61-41F0-9113-C9B2E17274F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2142F4B1-CE61-41F0-9113-C9B2E17274F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2142F4B1-CE61-41F0-9113-C9B2E17274F0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1380F2D4-795D-460D-8696-4450ED91D6BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1380F2D4-795D-460D-8696-4450ED91D6BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1380F2D4-795D-460D-8696-4450ED91D6BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1380F2D4-795D-460D-8696-4450ED91D6BB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
