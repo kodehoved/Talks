@@ -1,0 +1,70 @@
+1_000
+BenchmarkDotNet=v0.13.5, OS=Windows 10 (10.0.19044.2728/21H2/November2021Update)
+Intel Core i7-6700K CPU 4.00GHz (Skylake), 1 CPU, 8 logical and 4 physical cores
+.NET SDK=7.0.102
+  [Host]     : .NET 7.0.2 (7.0.222.60605), X64 RyuJIT AVX2
+  DefaultJob : .NET 7.0.2 (7.0.222.60605), X64 RyuJIT AVX2
+
+
+|      Method |        Mean |     Error |    StdDev | Ratio |
+|------------ |------------:|----------:|----------:|------:|
+|         Oop | 15,656.5 ns | 178.77 ns | 158.47 ns |  1.00 |
+|     OopLinq | 25,427.4 ns | 211.88 ns | 198.19 ns |  1.62 |
+| OopMockable | 15,171.7 ns | 153.22 ns | 143.32 ns |  0.97 |
+|         Ddd |  9,175.6 ns |  92.32 ns |  81.84 ns |  0.59 |
+|    DddTable |  2,179.2 ns |  19.66 ns |  18.39 ns |  0.14 |
+|   Optimized |    647.1 ns |   6.58 ns |   5.83 ns |  0.04 |
+
+
+10_000
+BenchmarkDotNet=v0.13.5, OS=Windows 10 (10.0.19044.2728/21H2/November2021Update)
+Intel Core i7-6700K CPU 4.00GHz (Skylake), 1 CPU, 8 logical and 4 physical cores
+.NET SDK=7.0.102
+  [Host]     : .NET 7.0.2 (7.0.222.60605), X64 RyuJIT AVX2
+  DefaultJob : .NET 7.0.2 (7.0.222.60605), X64 RyuJIT AVX2
+
+
+|      Method |       Mean |     Error |    StdDev | Ratio |
+|------------ |-----------:|----------:|----------:|------:|
+|         Oop | 162.771 us | 1.2577 us | 1.1149 us |  1.00 |
+|     OopLinq | 251.044 us | 1.8632 us | 1.7429 us |  1.54 |
+| OopMockable | 161.305 us | 0.9593 us | 0.8504 us |  0.99 |
+|         Ddd |  99.784 us | 1.1472 us | 1.0731 us |  0.61 |
+|    DddTable |  21.822 us | 0.2030 us | 0.1800 us |  0.13 |
+|   Optimized |   6.502 us | 0.1034 us | 0.0967 us |  0.04 |
+
+
+100_000
+BenchmarkDotNet=v0.13.5, OS=Windows 10 (10.0.19044.2728/21H2/November2021Update)
+Intel Core i7-6700K CPU 4.00GHz (Skylake), 1 CPU, 8 logical and 4 physical cores
+.NET SDK=7.0.102
+  [Host]     : .NET 7.0.2 (7.0.222.60605), X64 RyuJIT AVX2
+  DefaultJob : .NET 7.0.2 (7.0.222.60605), X64 RyuJIT AVX2
+
+
+|      Method |        Mean |     Error |    StdDev | Ratio |
+|------------ |------------:|----------:|----------:|------:|
+|         Oop | 1,700.62 us | 12.038 us | 10.052 us |  1.00 |
+|     OopLinq | 2,514.14 us | 17.224 us | 15.269 us |  1.48 |
+| OopMockable | 1,681.59 us | 18.305 us | 17.122 us |  0.99 |
+|         Ddd | 1,002.97 us |  2.810 us |  2.491 us |  0.59 |
+|    DddTable |   219.43 us |  2.436 us |  2.278 us |  0.13 |
+|   Optimized |    66.22 us |  0.509 us |  0.476 us |  0.04 |
+
+
+1_000_000
+BenchmarkDotNet=v0.13.5, OS=Windows 10 (10.0.19044.2728/21H2/November2021Update)
+Intel Core i7-6700K CPU 4.00GHz (Skylake), 1 CPU, 8 logical and 4 physical cores
+.NET SDK=7.0.102
+  [Host]     : .NET 7.0.2 (7.0.222.60605), X64 RyuJIT AVX2
+  DefaultJob : .NET 7.0.2 (7.0.222.60605), X64 RyuJIT AVX2
+
+
+|      Method |      Mean |     Error |    StdDev | Ratio |
+|------------ |----------:|----------:|----------:|------:|
+|         Oop | 17.329 ms | 0.1514 ms | 0.1342 ms |  1.00 |
+|     OopLinq | 25.991 ms | 0.1775 ms | 0.1661 ms |  1.50 |
+| OopMockable | 17.263 ms | 0.1039 ms | 0.0921 ms |  1.00 |
+|         Ddd | 10.347 ms | 0.0725 ms | 0.0643 ms |  0.60 |
+|    DddTable |  2.339 ms | 0.0276 ms | 0.0258 ms |  0.14 |
+|   Optimized |  1.045 ms | 0.0087 ms | 0.0073 ms |  0.06 |
