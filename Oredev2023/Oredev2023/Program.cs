@@ -3,8 +3,8 @@
 using System.Numerics;
 using BenchmarkDotNet.Attributes;
 using BenchmarkDotNet.Running;
-using Oredev2023.DDD;
-using Oredev2023.OOP;
+using Oredev2023.Alternative;
+using Oredev2023.CleanCode;
 
 public class Program
 {
@@ -19,14 +19,14 @@ public class Program
     {
         var x = new Benchmarks();
 
-        Console.WriteLine($"OOP            {x.Oop()}");
-        Console.WriteLine($"OOP LINQ       {x.OopLinq()}");
-        Console.WriteLine($"OOP MOCK       {x.OopMockable()}");
-        Console.WriteLine($"DDD            {x.Ddd()}");
-        Console.WriteLine($"DDD TABLE      {x.DddTable()}");
-        Console.WriteLine($"DDD UNROLL     {x.DddTableUnrolled()}");
-        Console.WriteLine($"OPTIMIZED      {x.Optimized()}");
-        Console.WriteLine($"OPTIMIZED WIDE {x.Optimized()}");
+        Console.WriteLine($"Clean Code           :{x.CleanCode()}");
+        Console.WriteLine($"Clean Code LINQ      :{x.CleanCodeLinq()}");
+        Console.WriteLine($"Clean Code Mockable  :{x.CleanCodeMockable()}");
+        Console.WriteLine($"No Polymorphism      :{x.NoPolymorphism()}");
+        Console.WriteLine($"Table Driven         :{x.TableDriven()}");
+        Console.WriteLine($"Table Driven Unrolled:{x.TableDrivenUnrolled()}");
+        Console.WriteLine($"Optimized            :{x.Optimized()}");
+        Console.WriteLine($"Optimized Wide       :{x.Optimized()}");
     }
 }
 
@@ -35,13 +35,13 @@ public class Benchmarks
     private const int Size = 1_000;
     private const int Threads = 8;
 
-    private readonly List<OOP.Shape> oopData = new(Size);
+    private readonly List<CleanCode.Shape> cleanCodeData = new(Size);
 
-    private readonly List<IMockableShape> oopMockableData = new(Size);
+    private readonly List<IMockableShape> cleanCodeMockableData = new(Size);
 
-    private readonly DDD.Shape[] dddData = new DDD.Shape[Size];
+    private readonly Alternative.Shape[] noPolymorphismData = new Alternative.Shape[Size];
 
-    private readonly DDD.Shape[] dddDataTable = new DDD.Shape[Size];
+    private readonly Alternative.Shape[] tableDrivenData = new Alternative.Shape[Size];
 
     private readonly double[] widths = new double[Size];
 
@@ -53,69 +53,69 @@ public class Benchmarks
 
 
     [Benchmark(Baseline = true)]
-    public double Oop()
+    public double CleanCode()
     {
         var areaSum = 0d;
-        foreach (var s in oopData)
+        foreach (var s in cleanCodeData)
         {
-            areaSum += s.GetArea();
+            areaSum += s.Area;
         }
 
         return areaSum;
     }
 
     [Benchmark]
-    public double OopLinq()
+    public double CleanCodeLinq()
     {
-        return oopData.Sum(s => s.GetArea());
+        return cleanCodeData.Sum(s => s.Area);
     }
 
     [Benchmark]
-    public double OopMockable()
+    public double CleanCodeMockable()
     {
         var areaSum = 0d;
-        foreach (var s in oopData)
+        foreach (var s in cleanCodeMockableData)
         {
-            areaSum += s.GetArea();
+            areaSum += s.Area;
         }
 
         return areaSum;
     }
 
     [Benchmark]
-    public double Ddd()
+    public double NoPolymorphism()
     {
         var areaSum = 0d;
         for (int i = 0; i < Size; i++)
         {
-            areaSum += ShapeArea.GetArea(dddData[i]);
+            areaSum += ShapeArea.GetArea(noPolymorphismData[i]);
         }
 
         return areaSum;
     }
 
     [Benchmark]
-    public double DddTable()
+    public double TableDriven()
     {
         var areaSum = 0d;
         for (int i = 0; i < Size; i++)
         {
-            areaSum += ShapeArea.GetAreaFromTable(dddDataTable[i]);
+            areaSum += ShapeArea.GetAreaFromTable(tableDrivenData[i]);
         }
 
         return areaSum;
     }
 
     // [Benchmark]
-    public double DddTableUnrolled()
+    public double TableDrivenUnrolled()
     {
         var areaSum = 0d;
         for (int i = 0; i < Size; i += 4)
         {
-            areaSum += ShapeArea.GetAreaFromTable(dddDataTable[i]);
-            areaSum += ShapeArea.GetAreaFromTable(dddDataTable[i + 1]);
-            areaSum += ShapeArea.GetAreaFromTable(dddDataTable[i + 2]);
-            areaSum += ShapeArea.GetAreaFromTable(dddDataTable[i + 3]);
+            areaSum += ShapeArea.GetAreaFromTable(tableDrivenData[i]);
+            areaSum += ShapeArea.GetAreaFromTable(tableDrivenData[i + 1]);
+            areaSum += ShapeArea.GetAreaFromTable(tableDrivenData[i + 2]);
+            areaSum += ShapeArea.GetAreaFromTable(tableDrivenData[i + 3]);
         }
 
         return areaSum;
@@ -185,15 +185,15 @@ public class Benchmarks
                 case 0:
                     {
                         var radius = rng.NextDouble() * 100d + 100d;
-                        oopData.Add(new Circle(radius));
-                        oopMockableData.Add(new MockableCircle(radius));
-                        dddData[i] = new DDD.Shape
+                        cleanCodeData.Add(new Circle(radius));
+                        cleanCodeMockableData.Add(new MockableCircle(radius));
+                        noPolymorphismData[i] = new Alternative.Shape
                         {
                             Type = Shapes.Circle,
                             Width = radius,
                             Height = 0d
                         };
-                        dddDataTable[i] = new DDD.Shape
+                        tableDrivenData[i] = new Alternative.Shape
                         {
                             Type = Shapes.Circle,
                             Width = radius,
@@ -207,15 +207,15 @@ public class Benchmarks
                 case 1:
                     {
                         var width = rng.NextDouble() * 100d + 100d;
-                        oopData.Add(new Square(width));
-                        oopMockableData.Add(new MockableSquare(width));
-                        dddData[i] = new DDD.Shape
+                        cleanCodeData.Add(new Square(width));
+                        cleanCodeMockableData.Add(new MockableSquare(width));
+                        noPolymorphismData[i] = new Alternative.Shape
                         {
                             Type = Shapes.Square,
                             Width = width,
                             Height = 0d
                         };
-                        dddDataTable[i] = new DDD.Shape
+                        tableDrivenData[i] = new Alternative.Shape
                         {
                             Type = Shapes.Square,
                             Width = width,
@@ -230,15 +230,15 @@ public class Benchmarks
                     {
                         var width = rng.NextDouble() * 100d + 100d;
                         var height = rng.NextDouble() * 100d + 100d;
-                        oopData.Add(new Rectangle(width, height));
-                        oopMockableData.Add(new MockableRectangle(width, height));
-                        dddData[i] = new DDD.Shape
+                        cleanCodeData.Add(new Rectangle(width, height));
+                        cleanCodeMockableData.Add(new MockableRectangle(width, height));
+                        noPolymorphismData[i] = new Alternative.Shape
                         {
                             Type = Shapes.Rectangle,
                             Width = width,
                             Height = height
                         };
-                        dddDataTable[i] = new DDD.Shape
+                        tableDrivenData[i] = new Alternative.Shape
                         {
                             Type = Shapes.Rectangle,
                             Width = width,
@@ -253,15 +253,15 @@ public class Benchmarks
                     {
                         var @base = rng.NextDouble() * 100d + 100d;
                         var height = rng.NextDouble() * 100d + 100d;
-                        oopData.Add(new Triangle(@base, height));
-                        oopMockableData.Add(new MockableTriangle(@base, height));
-                        dddData[i] = new DDD.Shape
+                        cleanCodeData.Add(new Triangle(@base, height));
+                        cleanCodeMockableData.Add(new MockableTriangle(@base, height));
+                        noPolymorphismData[i] = new Alternative.Shape
                         {
                             Type = Shapes.Triangle,
                             Width = @base,
                             Height = height
                         };
-                        dddDataTable[i] = new DDD.Shape
+                        tableDrivenData[i] = new Alternative.Shape
                         {
                             Type = Shapes.Triangle,
                             Width = @base,
