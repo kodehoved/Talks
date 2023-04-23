@@ -1,17 +1,16 @@
 namespace Oredev2023.Alternative;
+using static Oredev2023.Alternative.Shape;
 
-public enum Shapes
+public record struct Shape(Shapes Type, double Width, double Height)
 {
-    Square = 0,
-    Rectangle = 1,
-    Triangle = 2,
-    Circle = 3
-}
+    public enum Shapes
+    {
+        Square = 0,
+        Rectangle = 1,
+        Triangle = 2,
+        Circle = 3
+    }
 
-public record struct Shape(Shapes Type, double Width, double Height);
-
-public static class ShapeArea
-{
     public static double GetArea(Shape shape)
     {
         return shape.Type switch
@@ -24,7 +23,7 @@ public static class ShapeArea
         };
     }
 
-    private static double[] multiplierPerShape = { 1d, 1d, 0.5d, Math.PI };
+    private static readonly double[] multiplierPerShape = { 1d, 1d, 0.5d, Math.PI };
 
     public static double GetAreaFromTable(Shape shape)
     {

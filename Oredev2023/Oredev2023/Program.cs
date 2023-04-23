@@ -5,6 +5,8 @@ using BenchmarkDotNet.Attributes;
 using BenchmarkDotNet.Running;
 using Oredev2023.Alternative;
 using Oredev2023.CleanCode;
+using static Oredev2023.Alternative.Shape;
+using Shape = Alternative.Shape;
 
 public class Program
 {
@@ -88,7 +90,7 @@ public class Benchmarks
         var areaSum = 0d;
         for (int i = 0; i < Size; i++)
         {
-            areaSum += ShapeArea.GetArea(noPolymorphismData[i]);
+            areaSum += Shape.GetArea(noPolymorphismData[i]);
         }
 
         return areaSum;
@@ -100,7 +102,7 @@ public class Benchmarks
         var areaSum = 0d;
         for (int i = 0; i < Size; i++)
         {
-            areaSum += ShapeArea.GetAreaFromTable(tableDrivenData[i]);
+            areaSum += Shape.GetAreaFromTable(tableDrivenData[i]);
         }
 
         return areaSum;
@@ -112,10 +114,10 @@ public class Benchmarks
         var areaSum = 0d;
         for (int i = 0; i < Size; i += 4)
         {
-            areaSum += ShapeArea.GetAreaFromTable(tableDrivenData[i]);
-            areaSum += ShapeArea.GetAreaFromTable(tableDrivenData[i + 1]);
-            areaSum += ShapeArea.GetAreaFromTable(tableDrivenData[i + 2]);
-            areaSum += ShapeArea.GetAreaFromTable(tableDrivenData[i + 3]);
+            areaSum += Shape.GetAreaFromTable(tableDrivenData[i]);
+            areaSum += Shape.GetAreaFromTable(tableDrivenData[i + 1]);
+            areaSum += Shape.GetAreaFromTable(tableDrivenData[i + 2]);
+            areaSum += Shape.GetAreaFromTable(tableDrivenData[i + 3]);
         }
 
         return areaSum;
