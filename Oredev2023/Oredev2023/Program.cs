@@ -35,7 +35,7 @@ public class Program
 public class Benchmarks
 {
     private const int Size = 1_000;
-    private const int Threads = 8;
+    private const int Threads = 32;
 
     private readonly List<CleanCode.Shape> cleanCodeData = new(Size);
 

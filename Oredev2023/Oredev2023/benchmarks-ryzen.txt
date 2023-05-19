@@ -1,0 +1,74 @@
+1_000
+BenchmarkDotNet=v0.13.5, OS=Windows 11 (10.0.22621.1555/22H2/2022Update/SunValley2)
+AMD Ryzen 9 7950X, 1 CPU, 32 logical and 16 physical cores
+.NET SDK=7.0.203
+  [Host]     : .NET 7.0.5 (7.0.523.17405), X64 RyuJIT AVX2
+  DefaultJob : .NET 7.0.5 (7.0.523.17405), X64 RyuJIT AVX2
+
+|            Method |        Mean |     Error |    StdDev | Ratio |
+|------------------ |------------:|----------:|----------:|------:|
+|         CleanCode |  4,425.9 ns |  27.76 ns |  24.61 ns |  1.00 |
+|     CleanCodeLinq | 11,907.1 ns | 225.99 ns | 232.08 ns |  2.69 |
+| CleanCodeMockable |  5,910.7 ns |  38.61 ns |  34.22 ns |  1.34 |
+|    NoPolymorphism |  7,858.3 ns |  55.27 ns |  48.99 ns |  1.78 |
+|       TableDriven |  1,305.7 ns |   3.41 ns |   3.19 ns |  0.30 |
+|         Optimized |    380.9 ns |   2.48 ns |   2.32 ns |  0.09 |
+|     OptimizedWide |  3,823.0 ns |  30.22 ns |  28.27 ns |  0.86 |
+
+
+10_000
+BenchmarkDotNet=v0.13.5, OS=Windows 11 (10.0.22621.1555/22H2/2022Update/SunValley2)
+AMD Ryzen 9 7950X, 1 CPU, 32 logical and 16 physical cores
+.NET SDK=7.0.203
+  [Host]     : .NET 7.0.5 (7.0.523.17405), X64 RyuJIT AVX2
+  DefaultJob : .NET 7.0.5 (7.0.523.17405), X64 RyuJIT AVX2
+
+
+|            Method |       Mean |     Error |    StdDev | Ratio |
+|------------------ |-----------:|----------:|----------:|------:|
+|         CleanCode |  87.471 us | 0.2545 us | 0.2381 us |  1.00 |
+|     CleanCodeLinq | 121.428 us | 0.9966 us | 0.9322 us |  1.39 |
+| CleanCodeMockable |  92.584 us | 0.6331 us | 0.5922 us |  1.06 |
+|    NoPolymorphism |  72.985 us | 0.4455 us | 0.4168 us |  0.83 |
+|       TableDriven |  13.025 us | 0.0444 us | 0.0415 us |  0.15 |
+|         Optimized |   3.764 us | 0.0432 us | 0.0404 us |  0.04 |
+|     OptimizedWide |   3.407 us | 0.0176 us | 0.0165 us |  0.04 |
+
+
+100_000
+BenchmarkDotNet=v0.13.5, OS=Windows 11 (10.0.22621.1555/22H2/2022Update/SunValley2)
+AMD Ryzen 9 7950X, 1 CPU, 32 logical and 16 physical cores
+.NET SDK=7.0.203
+  [Host]     : .NET 7.0.5 (7.0.523.17405), X64 RyuJIT AVX2
+  DefaultJob : .NET 7.0.5 (7.0.523.17405), X64 RyuJIT AVX2
+
+
+|            Method |         Mean |      Error |     StdDev | Ratio |
+|------------------ |-------------:|-----------:|-----------:|------:|
+|         CleanCode |   954.122 us | 11.8731 us | 11.1061 us | 1.000 |
+|     CleanCodeLinq | 1,263.213 us | 25.0372 us | 24.5899 us | 1.326 |
+| CleanCodeMockable |   968.062 us |  3.5160 us |  3.2889 us | 1.015 |
+|    NoPolymorphism |   779.375 us | 15.3399 us | 24.3308 us | 0.817 |
+|       TableDriven |   131.033 us |  0.3618 us |  0.3385 us | 0.137 |
+|         Optimized |    37.821 us |  0.1030 us |  0.0860 us | 0.040 |
+|     OptimizedWide |     3.523 us |  0.0125 us |  0.0111 us | 0.004 |
+
+
+1_000_000
+BenchmarkDotNet=v0.13.5, OS=Windows 11 (10.0.22621.1555/22H2/2022Update/SunValley2)
+AMD Ryzen 9 7950X, 1 CPU, 32 logical and 16 physical cores
+.NET SDK=7.0.203
+  [Host]     : .NET 7.0.5 (7.0.523.17405), X64 RyuJIT AVX2
+  DefaultJob : .NET 7.0.5 (7.0.523.17405), X64 RyuJIT AVX2
+
+
+|            Method |          Mean |       Error |      StdDev | Ratio |
+|------------------ |--------------:|------------:|------------:|------:|
+|         CleanCode |  9,127.791 us |  44.9906 us |  42.0843 us | 1.000 |
+|     CleanCodeLinq | 11,925.801 us |  50.2442 us |  41.9562 us | 1.305 |
+| CleanCodeMockable |  9,718.509 us |  69.9158 us |  65.3993 us | 1.065 |
+|    NoPolymorphism |  7,836.702 us | 156.0627 us | 285.3695 us | 0.842 |
+|       TableDriven |  1,307.273 us |   7.4365 us |   6.9561 us | 0.143 |
+|         Optimized |    414.743 us |   6.7902 us |   6.3516 us | 0.045 |
+|     OptimizedWide |      3.481 us |   0.0215 us |   0.0201 us | 0.000 |
+
