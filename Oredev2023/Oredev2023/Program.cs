@@ -1,12 +1,11 @@
 ﻿namespace Oredev2023;
 
-using System.Numerics;
 using BenchmarkDotNet.Attributes;
 using BenchmarkDotNet.Running;
-using Oredev2023.Alternative;
 using Oredev2023.CleanCode;
-using static Oredev2023.Alternative.Shape;
-using Shape = Alternative.Shape;
+using Oredev2023.Alternative;
+using System.Numerics;
+
 
 public class Program
 {
@@ -34,7 +33,7 @@ public class Program
 
 public class Benchmarks
 {
-    private const int Size = 1_000;
+    private const int Size = 1_000_000;
     private const int Threads = 32;
 
     private readonly List<CleanCode.Shape> cleanCodeData = new(Size);
@@ -90,7 +89,7 @@ public class Benchmarks
         var areaSum = 0d;
         for (int i = 0; i < Size; i++)
         {
-            areaSum += Shape.GetArea(noPolymorphismData[i]);
+            areaSum += Alternative.Shape.GetArea(noPolymorphismData[i]);
         }
 
         return areaSum;
@@ -102,7 +101,7 @@ public class Benchmarks
         var areaSum = 0d;
         for (int i = 0; i < Size; i++)
         {
-            areaSum += Shape.GetAreaFromTable(tableDrivenData[i]);
+            areaSum += Alternative.Shape.GetAreaFromTable(tableDrivenData[i]);
         }
 
         return areaSum;
@@ -114,10 +113,10 @@ public class Benchmarks
         var areaSum = 0d;
         for (int i = 0; i < Size; i += 4)
         {
-            areaSum += Shape.GetAreaFromTable(tableDrivenData[i]);
-            areaSum += Shape.GetAreaFromTable(tableDrivenData[i + 1]);
-            areaSum += Shape.GetAreaFromTable(tableDrivenData[i + 2]);
-            areaSum += Shape.GetAreaFromTable(tableDrivenData[i + 3]);
+            areaSum += Alternative.Shape.GetAreaFromTable(tableDrivenData[i]);
+            areaSum += Alternative.Shape.GetAreaFromTable(tableDrivenData[i + 1]);
+            areaSum += Alternative.Shape.GetAreaFromTable(tableDrivenData[i + 2]);
+            areaSum += Alternative.Shape.GetAreaFromTable(tableDrivenData[i + 3]);
         }
 
         return areaSum;
@@ -191,13 +190,13 @@ public class Benchmarks
                         cleanCodeMockableData.Add(new MockableCircle(radius));
                         noPolymorphismData[i] = new Alternative.Shape
                         {
-                            Type = Shapes.Circle,
+                            Type = Alternative.Shape.Shapes.Circle,
                             Width = radius,
                             Height = 0d
                         };
                         tableDrivenData[i] = new Alternative.Shape
                         {
-                            Type = Shapes.Circle,
+                            Type = Alternative.Shape.Shapes.Circle,
                             Width = radius,
                             Height = radius
                         };
@@ -213,13 +212,13 @@ public class Benchmarks
                         cleanCodeMockableData.Add(new MockableSquare(width));
                         noPolymorphismData[i] = new Alternative.Shape
                         {
-                            Type = Shapes.Square,
+                            Type = Alternative.Shape.Shapes.Square,
                             Width = width,
                             Height = 0d
                         };
                         tableDrivenData[i] = new Alternative.Shape
                         {
-                            Type = Shapes.Square,
+                            Type = Alternative.Shape.Shapes.Square,
                             Width = width,
                             Height = width
                         };
@@ -236,13 +235,13 @@ public class Benchmarks
                         cleanCodeMockableData.Add(new MockableRectangle(width, height));
                         noPolymorphismData[i] = new Alternative.Shape
                         {
-                            Type = Shapes.Rectangle,
+                            Type = Alternative.Shape.Shapes.Rectangle,
                             Width = width,
                             Height = height
                         };
                         tableDrivenData[i] = new Alternative.Shape
                         {
-                            Type = Shapes.Rectangle,
+                            Type = Alternative.Shape.Shapes.Rectangle,
                             Width = width,
                             Height = height
                         };
@@ -259,13 +258,13 @@ public class Benchmarks
                         cleanCodeMockableData.Add(new MockableTriangle(@base, height));
                         noPolymorphismData[i] = new Alternative.Shape
                         {
-                            Type = Shapes.Triangle,
+                            Type = Alternative.Shape.Shapes.Triangle,
                             Width = @base,
                             Height = height
                         };
                         tableDrivenData[i] = new Alternative.Shape
                         {
-                            Type = Shapes.Triangle,
+                            Type = Alternative.Shape.Shapes.Triangle,
                             Width = @base,
                             Height = height
                         };
