@@ -27,7 +27,7 @@ public class Program
         Console.WriteLine($"Table Driven         :{x.TableDriven()}");
         Console.WriteLine($"Table Driven Unrolled:{x.TableDrivenUnrolled()}");
         Console.WriteLine($"Optimized            :{x.Optimized()}");
-        Console.WriteLine($"Optimized Wide       :{x.Optimized()}");
+        Console.WriteLine($"Optimized Wide       :{x.OptimizedWide()}");
     }
 }
 
@@ -71,7 +71,7 @@ public class Benchmarks
         return cleanCodeData.Sum(s => s.Area);
     }
 
-    [Benchmark]
+    //[Benchmark]
     public double CleanCodeMockable()
     {
         var areaSum = 0d;
@@ -107,7 +107,7 @@ public class Benchmarks
         return areaSum;
     }
 
-    // [Benchmark]
+    //[Benchmark]
     public double TableDrivenUnrolled()
     {
         var areaSum = 0d;
@@ -151,8 +151,8 @@ public class Benchmarks
         Parallel.For(0, Threads, index =>
         {
             var localSum = 0d;
-            var start = index + widths.Length / Threads;
-            var stop = (index + 1) + widths.Length / Threads;
+            var start = index * widths.Length / Threads;
+            var stop = (index + 1) * widths.Length / Threads;
             for (int i = start; i <= stop - count; i += count)
             {
                 var v1 = new Vector<double>(new ReadOnlySpan<double>(widths, i, count));
@@ -167,7 +167,7 @@ public class Benchmarks
             threadResult[index] = localSum;
         });
 
-        for(var i = 0; i < threadResult.Length; i++)
+        for (var i = 0; i < threadResult.Length; i++)
         {
             areaSum += threadResult[i];
         }
