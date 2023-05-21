@@ -34,7 +34,7 @@ public class Program
 public class Benchmarks
 {
     private const int Size = 1_000_000;
-    private const int Threads = 32;
+    private const int Threads = 8;
 
     private readonly List<CleanCode.Shape> cleanCodeData = new(Size);
 
@@ -65,7 +65,7 @@ public class Benchmarks
         return areaSum;
     }
 
-    [Benchmark]
+    //[Benchmark]
     public double CleanCodeLinq()
     {
         return cleanCodeData.Sum(s => s.Area);
@@ -83,7 +83,7 @@ public class Benchmarks
         return areaSum;
     }
 
-    [Benchmark]
+    //[Benchmark]
     public double NoPolymorphism()
     {
         var areaSum = 0d;
@@ -95,7 +95,7 @@ public class Benchmarks
         return areaSum;
     }
 
-    [Benchmark]
+    //[Benchmark]
     public double TableDriven()
     {
         var areaSum = 0d;

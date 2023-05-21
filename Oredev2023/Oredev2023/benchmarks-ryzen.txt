@@ -53,3 +53,48 @@ AMD Ryzen 9 7950X, 1 CPU, 32 logical and 16 physical cores
 |       TableDriven |  1,315.551 us |  6.1077 us |  5.4143 us | 0.143 |
 |         Optimized |    399.746 us |  3.1173 us |  2.9159 us | 0.044 |
 |     OptimizedWide |      3.210 us |  0.0233 us |  0.0218 us | 0.000 |
+
+
+2 threads
+BenchmarkDotNet=v0.13.5, OS=Windows 11 (10.0.22621.1702/22H2/2022Update/SunValley2)
+AMD Ryzen 9 7950X, 1 CPU, 32 logical and 16 physical cores
+.NET SDK=7.0.203
+  [Host]     : .NET 7.0.5 (7.0.523.17405), X64 RyuJIT AVX2
+  DefaultJob : .NET 7.0.5 (7.0.523.17405), X64 RyuJIT AVX2
+
+
+|        Method |       Mean |    Error |   StdDev | Ratio |
+|-------------- |-----------:|---------:|---------:|------:|
+|     CleanCode | 8,899.3 us | 70.33 us | 65.79 us |  1.00 |
+|     Optimized |   402.9 us |  4.86 us |  4.55 us |  0.05 |
+| OptimizedWide |   227.9 us |  1.66 us |  1.55 us |  0.03 |
+
+
+4 threads
+BenchmarkDotNet=v0.13.5, OS=Windows 11 (10.0.22621.1702/22H2/2022Update/SunValley2)
+AMD Ryzen 9 7950X, 1 CPU, 32 logical and 16 physical cores
+.NET SDK=7.0.203
+  [Host]     : .NET 7.0.5 (7.0.523.17405), X64 RyuJIT AVX2
+  DefaultJob : .NET 7.0.5 (7.0.523.17405), X64 RyuJIT AVX2
+
+
+|        Method |       Mean |    Error |  StdDev | Ratio |
+|-------------- |-----------:|---------:|--------:|------:|
+|     CleanCode | 8,999.0 us | 11.27 us | 9.41 us |  1.00 |
+|     Optimized |   410.3 us |  2.07 us | 1.73 us |  0.05 |
+| OptimizedWide |   118.5 us |  0.35 us | 0.33 us |  0.01 |
+
+
+8 threads
+BenchmarkDotNet=v0.13.5, OS=Windows 11 (10.0.22621.1702/22H2/2022Update/SunValley2)
+AMD Ryzen 9 7950X, 1 CPU, 32 logical and 16 physical cores
+.NET SDK=7.0.203
+  [Host]     : .NET 7.0.5 (7.0.523.17405), X64 RyuJIT AVX2
+  DefaultJob : .NET 7.0.5 (7.0.523.17405), X64 RyuJIT AVX2
+
+
+|        Method |        Mean |     Error |   StdDev | Ratio |
+|-------------- |------------:|----------:|---------:|------:|
+|     CleanCode | 9,067.43 us | 10.181 us | 9.025 us |  1.00 |
+|     Optimized |   403.44 us |  1.571 us | 1.469 us |  0.04 |
+| OptimizedWide |    96.72 us |  1.890 us | 3.053 us |  0.01 |
