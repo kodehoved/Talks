@@ -5,7 +5,9 @@ VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Oredev2023", "Oredev2023\Oredev2023.csproj", "{98F6AFE6-95D8-4F9E-9932-F4D3959B17D3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CacheBenchmarks", "CacheBenchmarks\CacheBenchmarks.csproj", "{DF581561-3BF2-4611-BF9F-E85E741B3560}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CacheBenchmarks", "CacheBenchmarks\CacheBenchmarks.csproj", "{DF581561-3BF2-4611-BF9F-E85E741B3560}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RefactoringToClasses", "RefactoringToClasses\RefactoringToClasses.csproj", "{A5DC2E4D-8B89-4CAB-AD1F-CA2B18819FF6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{DF581561-3BF2-4611-BF9F-E85E741B3560}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DF581561-3BF2-4611-BF9F-E85E741B3560}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DF581561-3BF2-4611-BF9F-E85E741B3560}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A5DC2E4D-8B89-4CAB-AD1F-CA2B18819FF6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5DC2E4D-8B89-4CAB-AD1F-CA2B18819FF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5DC2E4D-8B89-4CAB-AD1F-CA2B18819FF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5DC2E4D-8B89-4CAB-AD1F-CA2B18819FF6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
